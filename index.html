@@ -135,6 +135,7 @@
   </thead>
   <tbody id="tableBody"></tbody>
 </table>
+<div id="pageInfo" style="text-align:center;padding:8px;font-size:13px;color:var(--text2)"></div>
 </div>
 
 <div class="legend">
@@ -145,6 +146,8 @@
 <script>
 let currentSort = { key: null, dir: 'asc' };
 let currentStock = null;
+let stockPage = 1;
+const ROWS = 16;
 
 function fmt(v, dp) { return (v == null || isNaN(v)) ? '—' : Number(v).toFixed(dp||2); }
 function fmtChg(v) {
@@ -174,27 +177,30 @@ function selectStock() {
   const name = sel.value;
   if (!name || !stockData[name]) return;
   currentStock = name;
+  stockPage = 1;
   const h = stockData[name].history;
   const last = h[h.length-1] || {};
   document.getElementById('stockInfo').textContent =
     `${h.length} 日｜最新 ${last.date} 收${last.close} 高${last.high} 低${last.low} KD${last.kd}`;
-  renderTable(h);
+  renderPage(h);
 }
 
-function renderTable(rows) {
+function renderPage(rows) {
+  const total = rows.length;
+  const pages = Math.ceil(total / ROWS);
+  if (stockPage > pages) stockPage = pages;
+  if (stockPage < 1) stockPage = 1;
+  
+  const start = total - stockPage * ROWS;
+  const end = total - (stockPage - 1) * ROWS;
+  const data = rows.slice(Math.max(0, start), end);
+  
   const tbody = document.getElementById('tableBody');
-  if (!rows || rows.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="10" class="empty-msg">無資料</td></tr>';
-    return;
-  }
   let html = '';
-  const data = [...rows].reverse(); // 最新在上
-  for (const s of data) {
+  for (const s of [...data].reverse()) {
     const chgClass = s.change > 0 ? 'price-up' : (s.change < 0 ? 'price-down' : '');
-    // KD 紅綠底：用漲跌方向比照 excl個股規則
     const kdClass = s.change > 0 ? 'kd-up' : 'kd-down';
-    const noteKey = `${currentStock}_${s.date}`;
-    const note = localStorage.getItem('note_' + noteKey) || '';
+    const note = localStorage.getItem('note_' + currentStock + '_' + s.date) || '';
     html += `<tr>
       <td class="date-cell">${s.date}</td>
       <td class="${chgClass}">${fmt(s.close, s.close % 1 === 0 ? 0 : 1)}</td>
@@ -207,8 +213,21 @@ function renderTable(rows) {
       <td class="note-cell" onclick="editNote(this,'${currentStock}','${s.date}')">${note || '✏️'}</td>
     </tr>`;
   }
-  tbody.innerHTML = html;
+  tbody.innerHTML = html || '<tr><td colspan="10" class="empty-msg">無資料</td></tr>';
+  
+  // 頁碼
+  const pi = document.getElementById('pageInfo');
+  if (pages > 1) {
+    const a = Math.max(1, total - stockPage * ROWS + 1);
+    const b = Math.min(total, total - (stockPage - 1) * ROWS);
+    pi.innerHTML = `📄 ${a}-${b} / 共${total}日 &nbsp; <span style="cursor:pointer;color:var(--accent)" onclick="pg(-1)">◀ 上一頁</span> <span style="cursor:pointer;color:var(--accent)" onclick="pg(1)">下一頁 ▶</span>`;
+  } else { pi.innerHTML = `📄 共${total}日`; }
 }
+
+function pg(d) { stockPage += d; renderPage(stockData[currentStock].history); }
+
+// 保留舊名給其他函數用
+function renderTable(r) { renderPage(r); }
 
 function sortBy(col) {
   if (currentSort.key === col) {
