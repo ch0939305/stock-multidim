@@ -152,8 +152,8 @@ const ROWS = 16;
 function fmt(v, dp) { return (v == null || isNaN(v)) ? '—' : Number(v).toFixed(dp||2); }
 function fmtChg(v) {
   if (v == null) return '—';
-  const sign = v > 0 ? '+' : '';
-  return sign + fmt(Math.abs(v), Math.abs(v) % 1 === 0 ? 0 : 1);
+  const prefix = v > 0 ? '+' : '';
+  return prefix + v.toFixed(2);
 }
 
 function populateSelector() {
