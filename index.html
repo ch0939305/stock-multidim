@@ -197,18 +197,15 @@ function renderPage(rows) {
   
   const tbody = document.getElementById('tableBody');
   let html = '';
-  const rev = [...data].reverse();
-  for (let i = 0; i < rev.length; i++) {
-    const s = rev[i];
-    const prevKd = i < rev.length-1 ? rev[i+1].kd : (rows.indexOf(s) > 0 ? rows[rows.indexOf(s)-1].kd : null);
+  for (const s of [...data].reverse()) {
     const chgClass = s.change > 0 ? 'price-up' : (s.change < 0 ? 'price-down' : '');
-    const kdClass = prevKd !== null && s.kd > prevKd ? 'kd-up' : prevKd !== null && s.kd < prevKd ? 'kd-down' : '';
+    const kdClass = s.change > 0 ? 'kd-up' : 'kd-down';
     const note = localStorage.getItem('note_' + currentStock + '_' + s.date) || '';
     html += `<tr>
       <td class="date-cell">${s.date}</td>
-      <td>${fmt(s.close, s.close % 1 === 0 ? 0 : 1)}</td>
-      <td>${fmt(s.high, s.high % 1 === 0 ? 0 : 1)}</td>
-      <td>${fmt(s.low, s.low % 1 === 0 ? 0 : 1)}</td>
+      <td class="${chgClass}">${fmt(s.close, s.close % 1 === 0 ? 0 : 1)}</td>
+      <td class="${chgClass}">${fmt(s.high, s.high % 1 === 0 ? 0 : 1)}</td>
+      <td class="${chgClass}">${fmt(s.low, s.low % 1 === 0 ? 0 : 1)}</td>
       <td class="${chgClass}">${fmtChg(s.change)}</td>
       <td class="${kdClass}">${fmt(s.kd, 1)}</td>
       <td>${fmt(s.range8, 1)}</td>
