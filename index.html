@@ -197,9 +197,12 @@ function renderPage(rows) {
   
   const tbody = document.getElementById('tableBody');
   let html = '';
-  for (const s of [...data].reverse()) {
+  const rev = [...data].reverse();
+  for (let i = 0; i < rev.length; i++) {
+    const s = rev[i];
+    const prevKd = i < rev.length-1 ? rev[i+1].kd : (rows.indexOf(s) > 0 ? rows[rows.indexOf(s)-1].kd : null);
     const chgClass = s.change > 0 ? 'price-up' : (s.change < 0 ? 'price-down' : '');
-    const kdClass = s.change > 0 ? 'kd-up' : 'kd-down';
+    const kdClass = prevKd !== null && s.kd > prevKd ? 'kd-up' : prevKd !== null && s.kd < prevKd ? 'kd-down' : '';
     const note = localStorage.getItem('note_' + currentStock + '_' + s.date) || '';
     html += `<tr>
       <td class="date-cell">${s.date}</td>
