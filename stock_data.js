@@ -1,4 +1,4 @@
-// 產生於 2026-08-10 15:25  16 檔
+// 產生於 2026-08-11 18:03  16 檔
 const stockData = {
   "00632R": {
     "ticker": "00632R",
@@ -892,6 +892,16 @@ const stockData = {
         "kd": 13.02,
         "range8": 1.51,
         "bullbear": 0.19
+      },
+      {
+        "date": "2026/08/11",
+        "close": 10.16,
+        "high": 10.27,
+        "low": 10.14,
+        "change": -0.01,
+        "kd": 9.34,
+        "range8": 0.58,
+        "bullbear": 0.54
       }
     ]
   },
@@ -1787,6 +1797,16 @@ const stockData = {
         "kd": 70.73,
         "range8": 2.7,
         "bullbear": 1.9
+      },
+      {
+        "date": "2026/08/11",
+        "close": 17.15,
+        "high": 17.4,
+        "low": 16.7,
+        "change": 0.5,
+        "kd": 77.61,
+        "range8": 2.15,
+        "bullbear": 1.66
       }
     ]
   },
@@ -2682,6 +2702,16 @@ const stockData = {
         "kd": 78.35,
         "range8": 7.25,
         "bullbear": 5.68
+      },
+      {
+        "date": "2026/08/11",
+        "close": 28.65,
+        "high": 28.95,
+        "low": 27.5,
+        "change": 1.15,
+        "kd": 84.42,
+        "range8": 8.05,
+        "bullbear": 6.79
       }
     ]
   },
@@ -3577,6 +3607,16 @@ const stockData = {
         "kd": 52.8,
         "range8": 0.65,
         "bullbear": 0.34
+      },
+      {
+        "date": "2026/08/11",
+        "close": 24.65,
+        "high": 24.8,
+        "low": 24.3,
+        "change": 0.1,
+        "kd": 64.83,
+        "range8": 0.55,
+        "bullbear": 0.35
       }
     ]
   },
@@ -4472,6 +4512,16 @@ const stockData = {
         "kd": 56.22,
         "range8": 1.11,
         "bullbear": 0.62
+      },
+      {
+        "date": "2026/08/11",
+        "close": 8.01,
+        "high": 8.1,
+        "low": 7.91,
+        "change": -0.07,
+        "kd": 63.14,
+        "range8": 1.03,
+        "bullbear": 0.65
       }
     ]
   },
@@ -5367,6 +5417,16 @@ const stockData = {
         "kd": 79.93,
         "range8": 2.75,
         "bullbear": 2.19
+      },
+      {
+        "date": "2026/08/11",
+        "close": 20.9,
+        "high": 20.95,
+        "low": 20.45,
+        "change": 0.0,
+        "kd": 86.02,
+        "range8": 2.15,
+        "bullbear": 1.84
       }
     ]
   },
@@ -6262,6 +6322,16 @@ const stockData = {
         "kd": 76.09,
         "range8": 4.8,
         "bullbear": 3.65
+      },
+      {
+        "date": "2026/08/11",
+        "close": 23.45,
+        "high": 24.05,
+        "low": 23.0,
+        "change": -1.1,
+        "kd": 75.38,
+        "range8": 3.0,
+        "bullbear": 2.26
       }
     ]
   },
@@ -7157,6 +7227,16 @@ const stockData = {
         "kd": 72.67,
         "range8": 1.8,
         "bullbear": 1.3
+      },
+      {
+        "date": "2026/08/11",
+        "close": 44.55,
+        "high": 44.55,
+        "low": 44.15,
+        "change": 0.2,
+        "kd": 77.61,
+        "range8": 0.8,
+        "bullbear": 0.62
       }
     ]
   },
@@ -8052,6 +8132,16 @@ const stockData = {
         "kd": 83.67,
         "range8": 5.45,
         "bullbear": 4.56
+      },
+      {
+        "date": "2026/08/11",
+        "close": 39.2,
+        "high": 39.95,
+        "low": 38.9,
+        "change": -0.55,
+        "kd": 84.22,
+        "range8": 4.35,
+        "bullbear": 3.66
       }
     ]
   },
@@ -8947,6 +9037,16 @@ const stockData = {
         "kd": 56.06,
         "range8": 1.4,
         "bullbear": 0.78
+      },
+      {
+        "date": "2026/08/11",
+        "close": 25.95,
+        "high": 26.25,
+        "low": 25.9,
+        "change": -0.35,
+        "kd": 50.07,
+        "range8": 0.8,
+        "bullbear": 0.4
       }
     ]
   },
@@ -9842,6 +9942,16 @@ const stockData = {
         "kd": 61.61,
         "range8": 2.3,
         "bullbear": 1.41
+      },
+      {
+        "date": "2026/08/11",
+        "close": 52.0,
+        "high": 52.2,
+        "low": 51.3,
+        "change": 0.4,
+        "kd": 71.94,
+        "range8": 1.9,
+        "bullbear": 1.36
       }
     ]
   },
@@ -10737,6 +10847,16 @@ const stockData = {
         "kd": 85.9,
         "range8": 40.0,
         "bullbear": 34.36
+      },
+      {
+        "date": "2026/08/11",
+        "close": 263.0,
+        "high": 266.0,
+        "low": 260.5,
+        "change": -1.5,
+        "kd": 87.31,
+        "range8": 23.5,
+        "bullbear": 20.51
       }
     ]
   },
@@ -11632,6 +11752,16 @@ const stockData = {
         "kd": 80.04,
         "range8": 12.8,
         "bullbear": 10.24
+      },
+      {
+        "date": "2026/08/11",
+        "close": 62.7,
+        "high": 63.9,
+        "low": 61.7,
+        "change": -0.4,
+        "kd": 80.18,
+        "range8": 9.1,
+        "bullbear": 7.29
       }
     ]
   },
@@ -14267,6 +14397,16 @@ const stockData = {
         "kd": 78.5,
         "range8": 5.7,
         "bullbear": 4.47
+      },
+      {
+        "date": "2026/08/11",
+        "close": 39.6,
+        "high": 40.0,
+        "low": 38.05,
+        "change": 1.65,
+        "kd": 83.86,
+        "range8": 6.5,
+        "bullbear": 5.45
       }
     ]
   },
@@ -16102,6 +16242,16 @@ const stockData = {
         "kd": 75.35,
         "range8": 220.0,
         "bullbear": 165.77
+      },
+      {
+        "date": "2026/08/11",
+        "close": 2395.0,
+        "high": 2405.0,
+        "low": 2375.0,
+        "change": 15.0,
+        "kd": 79.31,
+        "range8": 80.0,
+        "bullbear": 63.44
       }
     ]
   },
@@ -16797,6 +16947,16 @@ const stockData = {
         "kd": 47.02,
         "range8": 0.9,
         "bullbear": 0.42
+      },
+      {
+        "date": "2026/08/11",
+        "close": 20.95,
+        "high": 21.25,
+        "low": 20.75,
+        "change": -0.3,
+        "kd": 42.45,
+        "range8": 0.6,
+        "bullbear": 0.25
       }
     ]
   }
