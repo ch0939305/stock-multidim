@@ -1,4 +1,4 @@
-// 產生於 2026-09-07 17:53  從Excel重建bullbear(逐列)
+// 產生於 2026-09-07 18:00  多維股票2 bullbear 刪除重填
 const stockData = {
   "00632R": {
     "ticker": "00632R",
